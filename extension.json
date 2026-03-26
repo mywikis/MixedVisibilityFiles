@@ -7,7 +7,7 @@
 	"license-name": "MIT",
 	"@note": "Only list specific tested MediaWiki versions given how unstable the extension is",
 	"requires": {
-		"MediaWiki": "1.39.15 || 1.43.5"
+		"MediaWiki": "1.39.17 || 1.43.5"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\MixedVisibilityFiles\\": "src/"
