@@ -7,7 +7,7 @@
 	"license-name": "MIT",
 	"@note": "Only list specific tested MediaWiki versions given how unstable the extension is",
 	"requires": {
-		"MediaWiki": "1.39.15 || 1.43.5"
+		"MediaWiki": "1.39.17 || 1.43.5"
 	},
 	"AutoloadNamespaces": {
 		"MediaWiki\\Extension\\MixedVisibilityFiles\\": "src/"
@@ -27,7 +27,9 @@
 		"visibility": {
 			"class": "\\MediaWiki\\Extension\\MixedVisibilityFiles\\VisibilityHooks",
 			"services": [
-				"PageProps"
+				"PageProps",
+				"UserGroupManager",
+				"MainConfig"
 			]
 		}
 	},
@@ -35,6 +37,12 @@
 		"GetDoubleUnderscoreIDs": "visibility",
 		"getUserPermissionsErrorsExpensive": "visibility",
 		"MediaWikiServices": "services"
+	},
+	"config": {
+		"MixedVisibilityFilesPrefixRestrictions": {
+			"value": {},
+			"description": "Map of file name prefixes to user group(s). Files whose name starts with a given prefix are restricted to users in the specified group(s). Each key is a prefix string and each value is either a group name (string) or an array of group names. Prefix matching is case-sensitive; note that MediaWiki normalizes the first character of file names to uppercase. Example: {\"Confidential_\": \"sysop\", \"Internal_\": [\"sysop\", \"bureaucrat\"]}"
+		}
 	},
 	"manifest_version": 2
 }
